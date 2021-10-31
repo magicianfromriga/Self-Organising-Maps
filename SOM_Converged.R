@@ -1,4 +1,4 @@
-#This is the R Script for loading the data and creating the grid.
+# Loading the required libraries.
 
 
 library(ggplot2)
