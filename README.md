@@ -22,7 +22,10 @@ These challenges were overcome step-by-step as follows:
 1. The beginning: Numerous versions of the self organising map was developed from scratch. Kohonen’s textbook was used as a primary source. The most primitive implementation only ran for 1 epoch and took 37 seconds to work on a very small dataset (around 400 values).
 2. Problems with Naive Approach: One of the drawbacks of R is that compared to C or C++ it is a slower language. Thus, the naive approach had the drawback of being extremely slow.
 Compared to C, using a lot of for-loops in R hindered performance quite a bit. Two of the most expensive operations were computing the best matching unit (BMU) function and the SOM function. However, even the sum of squared distance (SSD) function was taking longer than expected. Thus the focus shifted to getting the code to run faster and more efficiently. 
-3. 
+3. Vectorisation: Focus shifted to the BMU function, where using vectorisation reduced the number of lines of code while making it 10x faster. The SOM code was also optimised to use matrix operations as much as possible. The end result was a model that used more than 4x less memory and was almost 10x faster than the naive implementation.
+4. Convergence: In the initial model, the SOM function ran for only one epoch. This doesn’t guarantee convergence. Hence, appropriate modifications were made to ensure that the model only stopped when there was no change between the old weights and new.
+
+
 
 
 
